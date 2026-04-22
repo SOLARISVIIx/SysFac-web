@@ -3,18 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SysFac Web - Sistema POS</title>
+    <title>SysFac Web - POS System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>SysFac Web</h1>
-        <p>Sistema de Facturación e Inventario</p>
-    </header>
-    
-    <main id="app">
-        <h2>Panel de Control</h2>
-    </main>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Sys<span>Fac</span></h2>
+            </div>
+            <nav class="menu">
+                <a href="#" class="active" onclick="cargarModulo('dashboard')">🏠 Dashboard</a>
+                <a href="#" onclick="cargarModulo('ventas')">💰 Punto de Venta</a>
+                <a href="#" onclick="cargarModulo('inventario')">📦 Inventario</a>
+                <a href="#" onclick="cargarModulo('clientes')">👥 Clientes</a>
+                <a href="#" onclick="cargarModulo('config')">⚙️ Configuración</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>v1.0.0 Local</p>
+            </div>
+        </aside>
+
+        <main class="main-layout">
+            <header class="topbar">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar producto o factura...">
+                </div>
+                <div class="user-info">
+                    <span>Bienvenido, <strong>Admin</strong></span>
+                </div>
+            </header>
+
+            <section id="view-container" class="content-view">
+                <h1>Resumen de Operaciones</h1>
+                <div class="stats-grid">
+                    <div class="card">Ventas del día: $0.00</div>
+                    <div class="card">Productos en stock: 0</div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
